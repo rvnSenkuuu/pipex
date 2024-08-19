@@ -6,7 +6,7 @@
 /*   By: tkara2 <tkara2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 17:33:13 by tkara2            #+#    #+#             */
-/*   Updated: 2024/08/13 10:54:29 by tkara2           ###   ########.fr       */
+/*   Updated: 2024/08/16 14:27:03 by tkara2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,7 @@ static char	*get_cmd_path(char *cmd, char *envp[])
 		full_path = ft_strjoin(cmd_path[i], "/");
 		cmd_exec = ft_strjoin(full_path, cmd);
 		if (access(cmd_exec, F_OK & X_OK) == 0)
-		{
-			free(full_path);
 			return (cmd_exec);
-		}
 		free(cmd_exec);
 		i++;
 	}

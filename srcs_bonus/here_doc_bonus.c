@@ -6,7 +6,7 @@
 /*   By: tkara2 <tkara2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 17:41:41 by tkara2            #+#    #+#             */
-/*   Updated: 2024/08/15 14:45:45 by tkara2           ###   ########.fr       */
+/*   Updated: 2024/08/18 16:59:27 by tkara2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ static void	here_doc(char *limiter, int *fds)
 	while (1)
 	{
 		line = get_next_line(STDIN_FILENO);
+		if (!line)
+			close_fd_exit(fds[1], tmpfile);
 		if (ft_strncmp(line, limiter, ft_strlen(limiter)) == 0)
 		{
 			free(line);
-			close(fds[1]);
-			close(tmpfile);
-			exit(SUCCESS);
+			close_fd_exit(fds[1], tmpfile);
 		}
 		write(tmpfile, line, ft_strlen(line));
 		free(line);

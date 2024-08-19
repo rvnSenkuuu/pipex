@@ -6,7 +6,7 @@
 /*   By: tkara2 <tkara2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 10:49:53 by tkara2            #+#    #+#             */
-/*   Updated: 2024/08/15 11:45:54 by tkara2           ###   ########.fr       */
+/*   Updated: 2024/08/18 10:39:22 by tkara2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 void	print_err(char *s_err);
 void	p_error_exit(char *err);
 void	close_fds(int *fds);
+void	close_fd_exit(int fd, int tmpfile);
 void	exec_cmd(char *cmd, char *envp[]);
 void	child_process(char *cmd, char *envp[]);
 int		first_process(char *argv[]);
